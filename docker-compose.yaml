@@ -6,15 +6,15 @@ services:
   #   command:
   #   environment:
   #     - DB_NAME=arclab
-  #     - DB_HOST=db
-  #     - DB_USER=edgedb
+  #     - DB_HOST=edgedb
+  #     - DB_USER=user
   #     - DB_PASSWORD=secret
   #     - DB_PORT=5656
   #   ports:
   #     - 5000:5000
   #   depends_on:
-  #     - db
-  db:
+  #     - edgedb
+  edgedb:
     image: edgedb/edgedb
     environment:
       - EDGEDB_SERVER_SECURITY=insecure_dev_mode
