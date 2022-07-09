@@ -1,0 +1,14 @@
+FROM jarredsumner/bun:edge as bun-develop-stage
+
+WORKDIR /app
+
+# RUN chown bun:bun /app
+# USER bun
+
+COPY package.json .
+COPY bun.lockb .
+
+# for non Next.js: RUN bun bun
+RUN bun bun  --use next
+
+COPY . .
