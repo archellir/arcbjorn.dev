@@ -43,3 +43,20 @@ make dcdb
 # Execute command in database container
 make dcdb c=<command>
 ```
+
+## Raw instructions
+
+Bun & Next.js
+
+    - curl https://bun.sh/install | bash
+    - bun create next ./<project-name>
+
+EdgeDB
+
+    - curl --proto '=https' --tlsv1.2 -sSf https://sh.edgedb.com | sh
+    - edgedb project init
+    - add docker-compose.json
+    - add credentials/dev.json
+    - docker-compose up -d --build
+    - docker-compose exec db edgedb -I dev migration create
+    - docker-compose exec db edgedb -I dev migrate
